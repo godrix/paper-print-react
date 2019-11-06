@@ -1,68 +1,113 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Paper React for happy printing
 
-## Available Scripts
 
-In the project directory, you can run:
+> This component is based on [@cognitom](https://github.com/cognitom) excellent [paper-css](https://github.com/cognitom/paper-css) paper-printing hack
 
-### `yarn start`
+Recently, we say "front-end" every day. Then why don't we make the printing documents in front-end? We believe we can make it perfectly without back-end. Paper React is just a small component, but it helps us create them in browser easily.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- [Installation](#installation)
+- [Guides](#Guides)
+  - [Basic Usage](#basic-usage)
+  - [Paper](#Paper)
+  - [Sheet](#Sheet)
+  - [NoPrint](#NoPrint)
+- Why Paper React?
+  - [Previewable](#previewable)
+- [License](#license)
 
-### `yarn test`
+## Installation
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ yarn add paper-print-react
+# npm install paper-print-react
+```
 
-### `yarn build`
+# Guides
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Basic Usage
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+import paper-print-react like this:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```js
+import { A4 } from 'paper-print-react';
+```
 
-### `yarn eject`
+How to use component in aplication
+```js
+<A4>
+  All content that can be placed on A4 page
+</A4>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```js
+// Choose A3, A4 or A5 importing relative component
+import { A3, A4, A5 } from 'paper-print-react';
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<A3>
+  All content that can be placed on A3 page
+</A3>
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+All available page sizes is listed below:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- A5, A5 landscape
+- A4, A4 landscape
+- A3, A3 landscape
 
-## Learn More
+```js
+<A4 landscape>
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Page
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+<Page/>
+```
+Props ```background```
 
-### Code Splitting
+## Sheet
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### A5
 
-### Analyzing the Bundle Size
+### A4
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### A3
 
-### Making a Progressive Web App
+## NoPrint
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```js
+<NoPrint>This content will not print thanks to the Notprinted.</NoPrint>
+```
 
-### Advanced Configuration
+See also [the examples](src/examples/) for detail.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## Why Paper React?
 
-### Deployment
+### Previewable
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+You can check the design and layout before printing. See the browser like when you build a web page.
 
-### `yarn build` fails to minify
+![Preview](https://i.imgur.com/rFVyuwr.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[This example](examples/ImagePage.js) could be printed like this.
+
+![Dialog](https://i.imgur.com/ZNCeAIJ.png)
+
+#### Want more?
+![Want more? gif](https://thumbs.gfycat.com/FreshAmpleFly-small.gif)
+#### Open an [issue](https://github.com/godrix/paper-print-react/issues/new)!
+
+## Contributing
+
+1. Fork it [paper-print-react](https://github.com/godrix/paper-print-react/fork)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
+
+
+## License
+
+The MIT License. Read [LICENSE](LICENSE) for further information.
