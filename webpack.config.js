@@ -5,7 +5,7 @@ module.exports = {
     entry: './src/PaperReact.js',
     output: {
         path: path.resolve('lib'),
-        filename: 'PaperReact.js.js',
+        filename: 'PaperReact.js',
         libraryTarget: 'commonjs2'
     },
     module: {
